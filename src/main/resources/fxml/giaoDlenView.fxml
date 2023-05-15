@@ -1,0 +1,562 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="520.0" prefWidth="710.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.libraryjavafx.giaoDlenViewController">
+   <children>
+      <Pane fx:id="jPanel6" accessibleText="jPanel6" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="600.0" prefWidth="986.0">
+         <children>
+            <Pane fx:id="jPanel5" accessibleText="jPanel5" layoutX="-7.0" prefHeight="113.0" prefWidth="727.0">
+               <children>
+                  <Label fx:id="jLabel1" accessibleText="HỆ THỐNG QUẢN LÝ THƯ VIỆN" layoutX="8.0" layoutY="23.0" prefHeight="67.0" prefWidth="986.0" text="Library Management System" textAlignment="CENTER">
+                     <font>
+                        <Font size="38.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <Pane fx:id="BIGDATA" accessibleText="BIGDATA" layoutX="-8.0" layoutY="109.0" prefHeight="418.0" prefWidth="727.0">
+               <children>
+                  <TabPane fx:id="tab_pane" accessibleText="Đọc giả" layoutX="7.0" layoutY="-14.0" prefHeight="479.0" prefWidth="986.0" rotateGraphic="true" tabClosingPolicy="UNAVAILABLE" tabMaxHeight="100.0" tabMaxWidth="200.0" tabMinHeight="25.0" tabMinWidth="50.0">
+                    <tabs>
+                      <Tab text="Booker">
+                           <content>
+                              <Pane fx:id="dg_panel" accessibleText="dg_panel" prefHeight="430.0" prefWidth="986.0">
+                                 <children>
+                                    <Label fx:id="jLabel2" accessibleText="Mã đọc giả" layoutX="55.0" layoutY="14.0" prefHeight="23.0" prefWidth="76.0" text="ID Booker" />
+                                    <Label fx:id="jLabel3" accessibleText="Tên" layoutX="55.0" layoutY="45.0" prefHeight="23.0" prefWidth="76.0" text="Name" />
+                                    <Label fx:id="jLabel4" accessibleText="Giới tính" layoutX="55.0" layoutY="90.0" prefHeight="23.0" prefWidth="76.0" text="Sex" />
+                                    <Label fx:id="jLabel5" accessibleText="Nghề nghiệp" layoutX="55.0" layoutY="133.0" prefHeight="23.0" prefWidth="76.0" text="Job" />
+                                    <Label fx:id="jLabel6" accessibleText="CMND" layoutX="55.0" layoutY="178.0" prefHeight="23.0" prefWidth="76.0" text="ID Card" />
+                                    <Label fx:id="jLabel7" accessibleText="Địa chỉ" layoutX="55.0" layoutY="223.0" prefHeight="23.0" prefWidth="76.0" text="Address" />
+                                    <Label fx:id="jLabel8" accessibleText="SDT" layoutX="55.0" layoutY="268.0" prefHeight="23.0" prefWidth="76.0" text="Phone Number" />
+                                    <Label fx:id="jLabel9" accessibleText="Ngày cấp thẻ" layoutX="55.0" layoutY="312.0" prefHeight="23.0" prefWidth="76.0" text="Date Of Card Release" />
+                                    <TextField fx:id="dg_tf_nghe" layoutX="144.0" layoutY="132.0" prefHeight="25.0" prefWidth="165.0" />
+                                    <TextField fx:id="dg_tf_cmnd" layoutX="143.0" layoutY="177.0" onAction="#dg_tf_cmndActionPerformed" prefHeight="25.0" prefWidth="166.0" />
+                                    <TextField fx:id="dg_tf_diachi" layoutX="144.0" layoutY="222.0" prefHeight="25.0" prefWidth="165.0" />
+                                    <TextField fx:id="dg_tf_sdt" layoutX="141.0" layoutY="267.0" prefHeight="25.0" prefWidth="168.0" />
+                                    <ScrollPane fx:id="jScrollPane1" layoutX="348.0" layoutY="52.0" prefHeight="343.0" prefWidth="638.0">
+                                       <content>
+                                          <TableView fx:id="tbl_dg" onMouseClicked="#tbl_dgMouseClicked" prefHeight="348.0" prefWidth="646.0">
+                                            <columns>
+                                              <TableColumn prefWidth="75.0" text="ID Booker" />
+                                              <TableColumn prefWidth="75.0" text="Name" />
+                                                <TableColumn prefWidth="75.0" text="Sex" />
+                                                <TableColumn prefWidth="88.00001525878906" text="Job" />
+                                                <TableColumn prefWidth="62.39996337890625" text="ID Card" />
+                                                <TableColumn prefWidth="75.0" text="Address" />
+                                                <TableColumn prefWidth="75.0" text="Phone Number" />
+                                                <TableColumn prefWidth="96.0" text="Date Of Card Release" />
+                                            </columns>
+                                          </TableView>
+                                       </content>
+                                    </ScrollPane>
+                                    <Button fx:id="dg_them_btn" accessibleText="Thêm" layoutX="28.0" layoutY="352.0" mnemonicParsing="false" onAction="#dg_them_btnActionPerformed" prefHeight="29.0" prefWidth="54.0" text="Add" />
+                                    <Button fx:id="dg_del_btn" accessibleText="Xóa" layoutX="93.0" layoutY="352.0" minWidth="53.0" mnemonicParsing="false" onAction="#dg_del_btnActionPerformed" prefHeight="30.0" prefWidth="53.0" text="Delete" />
+                                    <Button fx:id="dg_update_btn" accessibleText="Sửa" layoutX="157.0" layoutY="352.0" minWidth="53.0" mnemonicParsing="false" onAction="#dg_update_btnActionPerformed" prefHeight="29.0" prefWidth="53.0" text="Edit" />
+                                    <Button fx:id="jButton4" accessibleText="Tìm" layoutX="517.0" layoutY="13.0" mnemonicParsing="false" onAction="#jButton4ActionPerformed" text="Search" textFill="#1706fa" />
+                                    <TextField fx:id="dg_tf_search" layoutX="348.0" layoutY="13.0" />
+                                    <RadioButton fx:id="dg_nam" accessibleText="Nam" layoutX="157.0" layoutY="93.0" mnemonicParsing="false" text="Male" textFill="#2105ef" />
+                                    <RadioButton fx:id="dg_nu" accessibleText="Nữ" layoutX="226.0" layoutY="93.0" mnemonicParsing="false" text="Female" textFill="#ed070a" />
+                                    <TextField fx:id="dg_tf_tendg" layoutX="142.0" layoutY="44.0" prefHeight="25.0" prefWidth="158.0" />
+                                    <Label fx:id="jLabel48" accessibleText="Giới tính" layoutX="640.0" layoutY="14.0" prefHeight="23.0" prefWidth="76.0" text="Sex" />
+                                    <ComboBox fx:id="dg_search_gioitinh" layoutX="724.0" layoutY="13.0" prefWidth="150.0" />
+                                    <Label fx:id="jLabel51" accessibleText="Giới tính" alignment="CENTER" layoutX="317.0" layoutY="43.0" prefHeight="16.0" prefWidth="19.0" text="*" textFill="#f70404">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="jLabel52" accessibleText="Giới tính" alignment="CENTER" layoutX="317.0" layoutY="88.0" prefHeight="16.0" prefWidth="19.0" text="*" textFill="#f70404">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="jLabel53" accessibleText="Giới tính" alignment="CENTER" layoutX="317.0" layoutY="176.0" prefHeight="16.0" prefWidth="19.0" text="*" textFill="#f70404">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="jLabel55" accessibleText="Giới tính" alignment="CENTER" layoutX="319.0" layoutY="266.0" prefHeight="16.0" prefWidth="19.0" text="*" textFill="#f70404">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="jLabel73" accessibleText="Giới tính" alignment="CENTER" layoutX="319.0" layoutY="310.0" prefHeight="16.0" prefWidth="19.0" text="*" textFill="#f70404">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <Button fx:id="dg_rs_btn" accessibleText="Reset" layoutX="221.0" layoutY="352.0" mnemonicParsing="false" onAction="#dg_rs_btnActionPerformed" prefHeight="29.0" prefWidth="56.0" text="Reset" />
+                                    <Button fx:id="dg_cancel_btn" accessibleText="Hủy" layoutX="289.0" layoutY="351.0" mnemonicParsing="false" onAction="#dg_cancel_btnActionPerformed" prefHeight="29.0" prefWidth="56.0" text="Cancel" />
+                                    <Label fx:id="dg_tf_madg" layoutX="254.0" layoutY="3.0" prefHeight="9.0" prefWidth="76.0" />
+                                    <Button fx:id="jButton6" accessibleText="Refresh" layoutX="902.0" layoutY="13.0" mnemonicParsing="false" onAction="#jButton6ActionPerformed" prefHeight="25.0" prefWidth="56.0" text="Refresh" />
+                                    <DatePicker fx:id="dg_ngay" layoutX="139.0" layoutY="311.0" />
+                                 </children>
+                              </Pane>
+                           </content>
+                        </Tab>
+                      <Tab text="Book Borrow">
+                           <content>
+                              <Pane fx:id="jPanel2" prefHeight="200.0" prefWidth="200.0">
+                                 <children>
+                                    <Pane fx:id="jPanel10" layoutX="1.0" prefHeight="328.0" prefWidth="376.0">
+                                       <children>
+                                          <Label fx:id="jLabel79" accessibleText="Đọc giả" layoutX="14.0" layoutY="21.0" prefHeight="23.0" prefWidth="62.0" text="Booker" />
+                                          <Label fx:id="jLabel80" accessibleText="Ngày" layoutX="14.0" layoutY="84.0" prefHeight="23.0" prefWidth="62.0" text="Date" />
+                                          <Label fx:id="jLabel81" accessibleText="Nhân viên" layoutX="14.0" layoutY="120.0" prefHeight="23.0" prefWidth="62.0" text="Staff" />
+                                          <ScrollPane fx:id="jScrollPane8" layoutY="143.0" prefHeight="185.0" prefWidth="378.0">
+                                             <content>
+                                                <TableView fx:id="tbl_phieumuon" prefHeight="186.0" prefWidth="364.0">
+                                                  <columns>
+                                                    <TableColumn fx:id="c1" prefWidth="118.40001851320267" text="ID Book" />
+                                                    <TableColumn fx:id="c2" prefWidth="119.20001220703125" text="Name Of Book" />
+                                                      <TableColumn fx:id="c3" prefWidth="124.00003051757812" text="Numer" />
+                                                  </columns>
+                                                </TableView>
+                                             </content>
+                                          </ScrollPane>
+                                          <TextField fx:id="phieumuon_tf_madg" layoutX="115.0" layoutY="20.0" />
+                                          <TextField fx:id="phieumuon_tf_tien" layoutX="114.0" layoutY="53.0" />
+                                          <Label fx:id="jLabel22" accessibleText="Tiền cọc" layoutX="14.0" layoutY="52.0" prefHeight="23.0" prefWidth="62.0" text="Deposit" />
+                                          <Label fx:id="phieumuon_crntDate" accessibleText="date" layoutX="115.0" layoutY="84.0" prefHeight="23.0" prefWidth="62.0" text="date" />
+                                          <Label fx:id="phieumuon_crntUser" accessibleText="jLabel22" layoutX="115.0" layoutY="120.0" prefHeight="23.0" prefWidth="62.0" text="jLabel22" />
+                                       </children>
+                                    </Pane>
+                                    <SplitPane fx:id="jSeparator3" layoutX="377.0" prefHeight="448.0" prefWidth="6.0" />
+                                    <Pane fx:id="jPanel11" layoutX="383.0" prefHeight="329.0" prefWidth="601.0">
+                                       <children>
+                                          <Label fx:id="jLabel82" accessibleText="Sách" layoutX="21.0" layoutY="26.0" prefHeight="17.0" prefWidth="31.0" text="Book" />
+                                          <TextField fx:id="msach_tf_tensach" layoutX="98.0" layoutY="22.0" prefHeight="25.0" prefWidth="254.0" />
+                                          <Button fx:id="jButton12" accessibleText="Tìm" layoutX="396.0" layoutY="22.0" mnemonicParsing="false" onAction="#jButton12ActionPerformed" prefHeight="25.0" prefWidth="69.0" text="Search" />
+                                          <ScrollPane fx:id="jScrollPane9" layoutY="57.0" prefHeight="274.0" prefWidth="606.0">
+                                             <content>
+                                                <TableView fx:id="tbl_msach" prefHeight="275.0" prefWidth="602.0">
+                                                  <columns>
+                                                    <TableColumn fx:id="msach_c1" prefWidth="201.60003358125687" text="ID Book" />
+                                                    <TableColumn fx:id="msach_c2" minWidth="0.0" prefWidth="191.2000274658203" text="Name Of Book" />
+                                                      <TableColumn fx:id="msach_c3" prefWidth="200.00006103515625" text="Number" />
+                                                  </columns>
+                                                </TableView>
+                                             </content>
+                                          </ScrollPane>
+                                       </children>
+                                    </Pane>
+                                    <Button fx:id="jButton26" accessibleText="Hoàn tất" layoutX="400.0" layoutY="384.0" mnemonicParsing="false" onAction="#jButton26ActionPerformed" prefHeight="60.0" prefWidth="585.0" text="Finish" />
+                                    <Button fx:id="jButton1" accessibleText="Reset" layoutX="7.0" layoutY="378.0" mnemonicParsing="false" onAction="#jButton1ActionPerformed" prefHeight="25.0" prefWidth="364.0" text="Reset" />
+                                    <Button fx:id="jButton25" accessibleText="Thêm" layoutX="400.0" layoutY="338.0" mnemonicParsing="false" onAction="#jButton25ActionPerformed" prefHeight="36.0" prefWidth="585.0" text="Add" />
+                                    <Button fx:id="jButton11" accessibleText="Xóa" layoutX="7.0" layoutY="343.0" mnemonicParsing="false" onAction="#jButton11ActionPerformed" prefHeight="25.0" prefWidth="364.0" text="Delete" />
+                                    <Button fx:id="jButton2" accessibleText="Hủy" layoutX="7.0" layoutY="414.0" mnemonicParsing="false" onAction="#jButton2ActionPerformed" prefHeight="25.0" prefWidth="364.0" text="Hủy" />
+                                 </children>
+                              </Pane>
+                           </content>
+                        </Tab>
+                        <Tab text="Manage Book Borrow Receipt">
+                           <content>
+                              <Pane fx:id="qlpm_pane" prefHeight="200.0" prefWidth="200.0">
+                                 <children>
+                                    <ScrollPane fx:id="jScrollPane3" layoutX="-1.0" layoutY="74.0" prefHeight="292.0" prefWidth="479.0">
+                                       <content>
+                                          <TableView fx:id="tbl_pmTongHop" onMouseClicked="#tbl_pmTongHopMouseClicked" prefHeight="292.0" prefWidth="477.0">
+                                            <columns>
+                                              <TableColumn fx:id="title1" prefWidth="104.79998189210892" text="Title1" />
+                                              <TableColumn fx:id="title2" prefWidth="116.79998779296875" text="Title2" />
+                                                <TableColumn fx:id="title3" prefWidth="126.40005493164062" text="Title3" />
+                                                <TableColumn fx:id="title4" prefWidth="118.4000244140625" text="Title4" />
+                                            </columns>
+                                          </TableView>
+                                       </content>
+                                    </ScrollPane>
+                                    <Label fx:id="jLabel41" accessibleText="Ngày Thuê" layoutX="8.0" layoutY="26.0" prefHeight="23.0" prefWidth="76.0" text="Date Of Borrow" />
+                                    <Button fx:id="jButton3" accessibleText="Tìm" layoutX="430.0" layoutY="25.0" mnemonicParsing="false" onAction="#jButton3ActionPerformed" prefHeight="25.0" prefWidth="48.0" text="Search" />
+                                    <Label fx:id="jLabel83" accessibleText="Trạng thái" layoutX="231.0" layoutY="26.0" prefHeight="23.0" prefWidth="63.0" text="Status" />
+                                    <ComboBox fx:id="pmTongHop_tt_search" layoutX="289.0" layoutY="25.0" onAction="#pmTongHop_tt_searchActionPerformed" prefHeight="25.0" prefWidth="123.0" />
+                                    <SplitPane fx:id="jSeparator5" dividerPositions="0.38095238095238104" layoutX="479.0" layoutY="73.0" prefHeight="294.0" prefWidth="9.0">
+                                      <items>
+                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" />
+                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" />
+                                      </items>
+                                    </SplitPane>
+                                    <SplitPane fx:id="jSeparator6" dividerPositions="0.5" layoutX="4.0" layoutY="60.0" orientation="VERTICAL" prefHeight="12.0" prefWidth="986.0">
+                                      <items>
+                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0" />
+                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0" />
+                                      </items>
+                                    </SplitPane>
+                                    <Label fx:id="jLabel84" accessibleText="Mã phiếu" layoutX="497.0" layoutY="84.0" prefHeight="23.0" prefWidth="63.0" text="ID Book Borrow Receipt" />
+                                    <Label fx:id="jLabel85" accessibleText="Ngày" layoutX="497.0" layoutY="107.0" prefHeight="23.0" prefWidth="63.0" text="Date" />
+                                    <Label fx:id="jLabel88" accessibleText="Ngày trả" layoutX="497.0" layoutY="130.0" prefHeight="23.0" prefWidth="63.0" text="Date Of Return" />
+                                    <Label fx:id="jLabel86" accessibleText="Tiền cọc" layoutX="497.0" layoutY="153.0" prefHeight="23.0" prefWidth="63.0" text="Deposit" />
+                                    <Label fx:id="jLabel87" accessibleText="Đọc giả" layoutX="497.0" layoutY="176.0" prefHeight="23.0" prefWidth="63.0" text="Booker" />
+                                    <Button fx:id="btn_pmTongHop_update" accessibleText="Cập nhật" layoutX="853.0" layoutY="83.0" mnemonicParsing="false" onAction="#btn_pmTongHop_updateActionPerformed" prefHeight="25.0" prefWidth="110.0" text="Update" />
+                                    <Button fx:id="btn_pmTongHop_delete" accessibleText="Xóa" layoutX="853.0" layoutY="129.0" mnemonicParsing="false" onAction="#btn_pmTongHop_deleteActionPerformed" prefHeight="25.0" prefWidth="110.0" text="Delete" />
+                                    <Button fx:id="btn_pmTongHop_cancel" accessibleText="Hủy" layoutX="853.0" layoutY="172.0" mnemonicParsing="false" onAction="#btn_pmTongHop_cancelActionPerformed" prefHeight="25.0" prefWidth="110.0" text="Cancel" />
+                                    <ScrollPane fx:id="jScrollPane11" layoutX="488.0" layoutY="200.0" prefHeight="167.0" prefWidth="499.0">
+                                       <content>
+                                          <TableView fx:id="tbl_qlpm_ctpm" onMouseClicked="#tbl_pmTongHopMouseClicked" prefHeight="166.0" prefWidth="499.0">
+                                             <columns>
+                                                <TableColumn fx:id="qlpm_ctpm_title1" prefWidth="111.20007020235062" text="Title1" />
+                                                <TableColumn fx:id="qlpm_ctpm_title2" prefWidth="123.199951171875" text="Title2" />
+                                                <TableColumn fx:id="qlpm_ctpm_title3" prefWidth="128.80006408691406" text="Title3" />
+                                                <TableColumn fx:id="qlpm_ctpm_title4" prefWidth="122.4000244140625" text="Title4" />
+                                             </columns>
+                                          </TableView>
+                                       </content>
+                                    </ScrollPane>
+                                    <Button fx:id="btn_pmTongHop_xoaPM" accessibleText="Xóa Phiếu Mượn" layoutX="8.0" layoutY="372.0" mnemonicParsing="false" onAction="#btn_pmTongHop_xoaPMActionPerformed" prefHeight="25.0" prefWidth="171.0" text="Delete Book Borrow Receipt" />
+                                    <Button fx:id="btnPrint" accessibleText="Print" layoutX="252.0" layoutY="372.0" mnemonicParsing="false" onAction="#btnPrintActionPerformed" prefHeight="25.0" prefWidth="112.0" text="Print" />
+                                    <Button fx:id="btn_qlpm_suaSach" accessibleText="Sửa sách" layoutX="844.0" layoutY="376.0" mnemonicParsing="false" onAction="#btn_qlpm_suaSachActionPerformed" prefHeight="25.0" prefWidth="112.0" text="Edit book" />
+                                    <Label fx:id="txt_pmTongHop_tienCoc" layoutX="556.0" layoutY="173.0" prefHeight="23.0" prefWidth="63.0" />
+                                    <Label fx:id="txt_pmTongHop_docGia" layoutX="587.0" layoutY="107.0" prefHeight="23.0" prefWidth="63.0" />
+                                    <DatePicker fx:id="pmTongHop_ngaythue_search" layoutX="77.0" layoutY="25.0" prefHeight="25.0" prefWidth="155.0" />
+                                 </children>
+                              </Pane>
+                           </content>
+                        </Tab>
+                        <Tab text="Book Return">
+                           <content>
+                              <Pane fx:id="jPanel13" prefHeight="200.0" prefWidth="200.0">
+                                 <children>
+                                    <ScrollPane fx:id="jScrollPane4" layoutY="89.0" prefHeight="318.0" prefWidth="483.0">
+                                       <content>
+                                          <TableView fx:id="tbl_trasach" onMouseClicked="#tbl_trasachMouseClicked" prefHeight="316.0" prefWidth="481.0">
+                                            <columns>
+                                              <TableColumn fx:id="trasach_c1" prefWidth="88.79998189210892" text="ID Book Borrow Receipt" />
+                                              <TableColumn fx:id="trasach_c2" prefWidth="91.19998168945312" text="Date" />
+                                                <TableColumn fx:id="trasach_c3" prefWidth="92.800048828125" text="Booker" />
+                                                <TableColumn fx:id="trasach_c4" prefWidth="99.20001220703125" text="Staff" />
+                                                <TableColumn fx:id="trasach_c5" prefWidth="102.39996337890625" text="Status" />
+                                            </columns>
+                                          </TableView>
+                                       </content>
+                                    </ScrollPane>
+                                    <Label fx:id="jLabel16" accessibleText="Mã phiếu" layoutX="14.0" layoutY="14.0" prefHeight="23.0" prefWidth="56.0" text="ID Book Borrow Receipt" />
+                                    <TextField fx:id="jTextField1" layoutX="78.0" layoutY="13.0" prefHeight="25.0" prefWidth="288.0" />
+                                    <Button fx:id="jButton23" accessibleText="Tìm" layoutX="398.0" layoutY="13.0" mnemonicParsing="false" onAction="#jButton23ActionPerformed" prefHeight="25.0" prefWidth="61.0" text="Search" />
+                                    <SplitPane fx:id="jSeparator4" dividerPositions="0.29797979797979796" layoutX="485.0" layoutY="10.0" prefHeight="399.0" prefWidth="9.0">
+                                      <items>
+                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" />
+                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" />
+                                      </items>
+                                    </SplitPane>
+                                    <ScrollPane fx:id="jScrollPane10" layoutX="493.0" layoutY="148.0" prefHeight="173.0" prefWidth="493.0">
+                                       <content>
+                                          <TableView fx:id="tbl_trasach_ctpm" prefHeight="179.0" prefWidth="482.0">
+                                            <columns>
+                                              <TableColumn fx:id="trasach_ctpm_c1" prefWidth="152.79998475313187" text="ID Book" />
+                                              <TableColumn fx:id="trasach_ctpm_c2" prefWidth="162.40003967285156" text="Name Of Book" />
+                                                <TableColumn fx:id="trasach_ctpm_c3" prefWidth="168.7999267578125" text="Number " />
+                                            </columns>
+                                          </TableView>
+                                       </content>
+                                    </ScrollPane>
+                                    <Label fx:id="jLabel18" accessibleText="Mã phiếu" layoutX="510.0" layoutY="3.0" prefHeight="23.0" prefWidth="56.0" text="ID Book Borrow Receipt" />
+                                    <Label fx:id="jLabel19" accessibleText="Ngày trả" layoutX="510.0" layoutY="26.0" prefHeight="23.0" prefWidth="56.0" text="Date Of Return" />
+                                    <Label fx:id="jLabel20" accessibleText="Đọc giả" layoutX="510.0" layoutY="49.0" prefHeight="23.0" prefWidth="56.0" text="Booker" />
+                                    <Label fx:id="jLabel89" accessibleText="Tiền cọc" layoutX="510.0" layoutY="72.0" prefHeight="23.0" prefWidth="56.0" text="Deposit" />
+                                    <Label fx:id="jLabel21" accessibleText="Nhân viên" layoutX="510.0" layoutY="95.0" prefHeight="23.0" prefWidth="56.0" text="Staff" />
+                                    <Label fx:id="jLabel17" accessibleText="Ngày mượn" layoutX="510.0" layoutY="118.0" prefHeight="23.0" prefWidth="56.0" text="Date Of Borrow" />
+                                    <Label fx:id="lbl_TraSach_tiencoc" layoutX="630.0" layoutY="61.0" prefHeight="23.0" prefWidth="56.0" />
+                                    <Label fx:id="lbl_TraSach_nhanvien" layoutX="640.0" layoutY="95.0" prefHeight="23.0" prefWidth="56.0" />
+                                    <Label fx:id="lbl_TraSach_maphieu" layoutX="602.0" layoutY="3.0" prefHeight="23.0" prefWidth="56.0" />
+                                    <Label fx:id="lbl_TraSach_ngayTra" layoutX="612.0" layoutY="27.0" prefHeight="23.0" prefWidth="56.0" />
+                                    <Label fx:id="lbl_TraSach_dg" layoutX="612.0" layoutY="61.0" prefHeight="23.0" prefWidth="56.0" />
+                                    <Label fx:id="lbl_TraSach_ngayThue" layoutX="612.0" layoutY="95.0" prefHeight="23.0" prefWidth="56.0" />
+                                    <Button fx:id="btn_trasach_giahan" accessibleText="Gia hạn" layoutX="500.0" layoutY="328.0" mnemonicParsing="false" onAction="#btn_trasach_giahanActionPerformed" prefHeight="74.0" prefWidth="248.0" text="Set More Date  Of Borrow" />
+                                    <Button fx:id="btn_trasach_trahet" accessibleText="Trả hết" layoutX="755.0" layoutY="328.0" mnemonicParsing="false" onAction="#btn_trasach_trahetActionPerformed" prefHeight="74.0" prefWidth="230.0" text="Return all" />
+                                 </children>
+                              </Pane>
+                           </content>
+                        </Tab>
+                        <Tab text="Type Of Book">
+                           <content>
+                              <Pane fx:id="jPanel4" prefHeight="200.0" prefWidth="200.0">
+                                 <children>
+                                    <SplitPane dividerPositions="0.29797979797979796" layoutX="417.0" prefHeight="447.0" prefWidth="19.0">
+                                      <items>
+                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" />
+                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" />
+                                      </items>
+                                    </SplitPane>
+                                    <Label fx:id="jLabel" accessibleText="Thể loại" layoutX="15.0" layoutY="4.0" prefHeight="35.0" prefWidth="394.0" text="                Type" textAlignment="CENTER">
+                                       <font>
+                                          <Font size="33.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="jLabel33" accessibleText="Nhà xuất bản" layoutX="448.0" layoutY="4.0" prefHeight="35.0" prefWidth="394.0" text="                 Publisher" textAlignment="CENTER">
+                                       <font>
+                                          <Font size="33.0" />
+                                       </font>
+                                    </Label>
+                                    <Button fx:id="tl_them_btn" accessibleText="Thêm" layoutX="25.0" layoutY="135.0" mnemonicParsing="false" onAction="#tl_them_btnActionPerformed" prefHeight="25.0" prefWidth="54.0" text="Add" />
+                                    <Button fx:id="tl_del_btn" accessibleText="Xóa" layoutX="221.0" layoutY="135.0" mnemonicParsing="false" onAction="#tl_del_btnActionPerformed" prefHeight="25.0" prefWidth="53.0" text="Delete" />
+                                    <Button fx:id="tl_update_btn" accessibleText="Sửa" layoutX="156.0" layoutY="135.0" mnemonicParsing="false" onAction="#tl_update_btnActionPerformed" prefHeight="25.0" prefWidth="56.0" text="Edit" />
+                                    <Button fx:id="tl_rs_btn" accessibleText="Reset" layoutX="87.0" layoutY="135.0" mnemonicParsing="false" onAction="#tl_rs_btnActionPerformed" prefHeight="25.0" prefWidth="56.0" text="Reset" />
+                                    <Button fx:id="tl_cancel_btn" accessibleText="Hủy" layoutX="281.0" layoutY="135.0" mnemonicParsing="false" onAction="#tl_cancel_btnActionPerformed" prefHeight="25.0" prefWidth="56.0" text="Cancel" />
+                                    <Button fx:id="jButton16" accessibleText="Tìm" layoutX="347.0" layoutY="135.0" mnemonicParsing="false" onAction="#jButton16ActionPerformed" prefHeight="25.0" prefWidth="54.0" text="Search" />
+                                    <Label fx:id="jLabel34" accessibleText="Mã thể loại" layoutX="25.0" layoutY="53.0" prefHeight="17.0" prefWidth="76.0" text="ID Of Type Of Book" />
+                                    <Label fx:id="jLabel35" accessibleText="Tên thể loại" layoutX="25.0" layoutY="87.0" prefHeight="17.0" prefWidth="76.0" text="Name Of Type Of Book" />
+                                    <TextField fx:id="tl_tf_ten" layoutX="115.0" layoutY="83.0" prefHeight="25.0" prefWidth="288.0" />
+                                    <ScrollPane fx:id="jScrollPane6" layoutX="25.0" layoutY="172.0" prefHeight="247.0" prefWidth="389.0">
+                                       <content>
+                                          <TableView fx:id="tbl_tl" onMouseClicked="#tbl_tlMouseClicked" prefHeight="234.0" prefWidth="390.0">
+                                            <columns>
+                                              <TableColumn fx:id="tl_c1" prefWidth="184.80001145601273" text="ID Of Type Of Book" />
+                                              <TableColumn fx:id="tl_c2" prefWidth="191.20004272460938" text="Name Of Type Of Book" />
+                                            </columns>
+                                          </TableView>
+                                       </content>
+                                    </ScrollPane>
+                                    <Label fx:id="jLabel36" accessibleText="Mã NXB" layoutX="461.0" layoutY="53.0" prefHeight="17.0" prefWidth="76.0" text="ID Publisher" />
+                                    <Label fx:id="jLabel38" accessibleText="Tên" layoutX="630.0" layoutY="53.0" prefHeight="17.0" prefWidth="76.0" text="Name" />
+                                    <TextField fx:id="nxb_tf_ten" layoutX="668.0" layoutY="49.0" prefHeight="25.0" prefWidth="279.0" />
+                                    <TextField fx:id="nxb_tf_diachi" layoutX="529.0" layoutY="83.0" prefHeight="25.0" prefWidth="168.0" />
+                                    <TextField fx:id="nxb_tf_sdt" layoutX="739.0" layoutY="83.0" prefHeight="25.0" prefWidth="209.0" />
+                                    <Label fx:id="jLabel37" accessibleText="Địa chỉ" layoutX="461.0" layoutY="87.0" prefHeight="17.0" prefWidth="76.0" text="Address" />
+                                    <Label fx:id="jLabel39" accessibleText="SDT" layoutX="706.0" layoutY="87.0" prefHeight="17.0" prefWidth="48.0" text="Phone Number" />
+                                    <Button fx:id="nxb_them_btn" accessibleText="Thêm" layoutX="461.0" layoutY="135.0" mnemonicParsing="false" onAction="#nxb_them_btnActionPerformed" prefHeight="25.0" prefWidth="54.0" text="Add" />
+                                    <Button fx:id="nxb_del_btn" accessibleText="Xóa" layoutX="719.0" layoutY="135.0" mnemonicParsing="false" onAction="#nxb_del_btnActionPerformed" prefHeight="25.0" prefWidth="53.0" text="Delete" />
+                                    <Button fx:id="nxb_update_btn" accessibleText="Sửa" layoutX="630.0" layoutY="135.0" mnemonicParsing="false" onAction="#nxb_update_btnActionPerformed" prefHeight="25.0" prefWidth="56.0" text="Edit" />
+                                    <Button fx:id="nxb_rs_btn" accessibleText="Reset" layoutX="544.0" layoutY="135.0" mnemonicParsing="false" onAction="#nxb_rs_btnActionPerformed" prefHeight="25.0" prefWidth="56.0" text="Reset" />
+                                    <Button fx:id="nxb_cancel_btn" accessibleText="Hủy" layoutX="801.0" layoutY="135.0" mnemonicParsing="false" onAction="#nxb_cancel_btnActionPerformed" prefHeight="25.0" prefWidth="56.0" text="Cancel" />
+                                    <Button fx:id="jButton20" accessibleText="Tìm" layoutX="882.0" layoutY="135.0" mnemonicParsing="false" onAction="#jButton20ActionPerformed" prefHeight="25.0" prefWidth="54.0" text="Search" />
+                                    <ScrollPane fx:id="jScrollPane7" layoutX="444.0" layoutY="172.0" prefHeight="246.0" prefWidth="540.0">
+                                       <content>
+                                          <TableView fx:id="tbl_nxb" onMouseClicked="#tbl_nxbMouseClicked" prefHeight="234.0" prefWidth="538.0">
+                                            <columns>
+                                              <TableColumn fx:id="nxb_c1" prefWidth="120.79998475313187" text="ID Publisher" />
+                                              <TableColumn fx:id="nxb_c2" prefWidth="129.5999755859375" text="Name" />
+                                                <TableColumn fx:id="nxb_c3" prefWidth="138.40003967285156" text="Address" />
+                                                <TableColumn fx:id="nxb_SDT" prefWidth="141.60009765625" text="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;?import javafx.scene.control.Label?&gt;&lt;Label fx:id=&quot;jLabel39&quot; accessibleText=&quot;SDT&quot; layoutX=&quot;706.0&quot; layoutY=&quot;87.0&quot; prefHeight=&quot;17.0&quot; prefWidth=&quot;48.0&quot; text=&quot;Phone Number&quot; xmlns=&quot;http://javafx.com/javafx/18&quot; xmlns:fx=&quot;http://javafx.com/fxml/1&quot; /&gt;" />
+                                            </columns>
+                                          </TableView>
+                                       </content>
+                                    </ScrollPane>
+                                    <Label fx:id="tl_tf_matl" layoutX="127.0" layoutY="53.0" prefHeight="17.0" prefWidth="76.0" />
+                                    <Label fx:id="nxb_tf_manxb" layoutX="529.0" layoutY="53.0" prefHeight="17.0" prefWidth="76.0" />
+                                 </children>
+                              </Pane>
+                           </content>
+                        </Tab>
+                        <Tab text="Book">
+                           <content>
+                              <Pane fx:id="jPanel3" prefHeight="200.0" prefWidth="200.0">
+                                 <children>
+                                    <Label fx:id="jLabel10" accessibleText="Mã sách" layoutX="49.0" layoutY="22.0" prefHeight="23.0" prefWidth="58.0" text="ID Book" />
+                                    <Label fx:id="jLabel11" accessibleText="Tựa sách" layoutX="49.0" layoutY="52.0" prefHeight="23.0" prefWidth="58.0" text="The Book Title" />
+                                    <Label fx:id="jLabel12" accessibleText="Số trang" layoutX="49.0" layoutY="87.0" prefHeight="23.0" prefWidth="58.0" text="Number Of Book Pages" />
+                                    <Label fx:id="jLabel13" accessibleText="Ngôn ngữ" layoutX="49.0" layoutY="122.0" prefHeight="23.0" prefWidth="58.0" text="Language" />
+                                    <Label fx:id="jLabel14" accessibleText="Số lượng tồn" layoutX="49.0" layoutY="161.0" prefHeight="23.0" prefWidth="76.0" text="Stock" />
+                                    <Label fx:id="jLabel15" accessibleText="Thể loại" layoutX="49.0" layoutY="201.0" prefHeight="23.0" prefWidth="58.0" text="Type Of Book" />
+                                    <Label fx:id="jLabel30" accessibleText="NXB" layoutX="49.0" layoutY="238.0" prefHeight="23.0" prefWidth="58.0" text="Publisher" />
+                                    <TextField fx:id="sach_tf_ten" layoutX="144.0" layoutY="51.0" />
+                                    <TextField fx:id="sach_tf_sotrang" layoutX="144.0" layoutY="86.0" />
+                                    <TextField fx:id="sach_tf_ngonngu" layoutX="144.0" layoutY="121.0" />
+                                    <TextField fx:id="sach_tf_sl" layoutX="144.0" layoutY="160.0" />
+                                    <ComboBox fx:id="sach_tl" layoutX="143.0" layoutY="200.0" prefWidth="150.0" />
+                                    <ComboBox fx:id="sach_nxb" layoutX="143.0" layoutY="237.0" prefWidth="150.0" />
+                                    <Label fx:id="jLabel101" accessibleText="Mã sách" layoutX="309.0" layoutY="52.0" prefHeight="23.0" prefWidth="14.0" text="*" textFill="#ea0808">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="jLabel1011" accessibleText="Mã sách" layoutX="308.0" layoutY="159.0" prefHeight="23.0" prefWidth="14.0" text="*" textFill="#ea0808">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="jLabel10111" accessibleText="Mã sách" layoutX="308.0" layoutY="199.0" prefHeight="23.0" prefWidth="14.0" text="*" textFill="#ea0808">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="jLabel10112" accessibleText="Mã sách" layoutX="308.0" layoutY="236.0" prefHeight="23.0" prefWidth="14.0" text="*" textFill="#ea0808">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <Button fx:id="sach_them_btn" accessibleText="Thêm" layoutX="116.0" layoutY="330.0" mnemonicParsing="false" onAction="#sach_them_btnActionPerformed" prefHeight="25.0" prefWidth="54.0" text="Add" />
+                                    <Button fx:id="sach_del_btn" accessibleText="Xóa" layoutX="203.0" layoutY="330.0" mnemonicParsing="false" onAction="#sach_del_btnActionPerformed" prefHeight="25.0" prefWidth="53.0" text="Delete" />
+                                    <Button fx:id="sach_update_btn" accessibleText="Sửa" layoutX="280.0" layoutY="330.0" mnemonicParsing="false" onAction="#sach_update_btnActionPerformed" prefHeight="25.0" prefWidth="56.0" text="Edit" />
+                                    <Button fx:id="sach_rs_btn" accessibleText="Reset" layoutX="115.0" layoutY="367.0" mnemonicParsing="false" onAction="#sach_rs_btnActionPerformed" prefHeight="25.0" prefWidth="56.0" text="Reset" />
+                                    <Button fx:id="sach_cancel_btn" accessibleText="Hủy" layoutX="201.0" layoutY="367.0" mnemonicParsing="false" onAction="#sach_cancel_btnActionPerformed" prefHeight="25.0" prefWidth="56.0" text="Cancel" />
+                                    <TextField fx:id="sach_tf_ten_search" layoutX="502.0" layoutY="21.0" prefHeight="25.0" prefWidth="387.0" />
+                                    <Button fx:id="jButton8" accessibleText="Tìm" layoutX="904.0" layoutY="21.0" mnemonicParsing="false" onAction="#jButton8ActionPerformed" prefHeight="25.0" prefWidth="54.0" text="Search" />
+                                    <Label fx:id="jLabel43" accessibleText="Thể loại" layoutX="453.0" layoutY="54.0" prefHeight="23.0" prefWidth="58.0" text="Type Of Book" />
+                                    <ComboBox fx:id="sach_tl1" layoutX="502.0" layoutY="53.0" prefWidth="150.0" />
+                                    <Label fx:id="jLabel45" accessibleText="NXB" layoutX="706.0" layoutY="54.0" prefHeight="23.0" prefWidth="58.0" text="Publisher" />
+                                    <ComboBox fx:id="sach_nxb1" layoutX="739.0" layoutY="51.0" prefWidth="150.0" />
+                                    <Button fx:id="jButton14" accessibleText="Refresh" layoutX="903.0" layoutY="53.0" mnemonicParsing="false" onAction="#jButton14ActionPerformed" prefHeight="25.0" prefWidth="76.0" text="Refresh" />
+                                    <ScrollPane fx:id="jScrollPane2" layoutX="382.0" layoutY="86.0" prefHeight="307.0" prefWidth="604.0">
+                                       <content>
+                                          <TableView fx:id="tbl_sach" onMouseClicked="#tbl_sachMouseClicked" prefHeight="306.0" prefWidth="592.0">
+                                            <columns>
+                                              <TableColumn fx:id="sach_c1" prefWidth="80.79998475313187" text="ID Book" />
+                                              <TableColumn fx:id="sach_c2" prefWidth="78.4000244140625" text="The Book Title" />
+                                                <TableColumn fx:id="sach_c3" prefWidth="74.4000244140625" text="Number Of Book Pages" />
+                                                <TableColumn fx:id="sach_c4" prefWidth="81.59999084472656" text="Language" />
+                                                <TableColumn fx:id="sach_c5" prefWidth="87.99993896484375" text="Stock" />
+                                                <TableColumn fx:id="sach_c6" prefWidth="94.39990234375" text="ID Of Type Of Book" />
+                                                <TableColumn fx:id="sach_c7" prefWidth="96.0001220703125" text="Position On Book Case" />
+                                            </columns>
+                                          </TableView>
+                                       </content>
+                                    </ScrollPane>
+                                 </children>
+                              </Pane>
+                           </content>
+                        </Tab>
+                        <Tab text="Manage Staff">
+                           <content>
+                              <Pane fx:id="nv_panel" prefHeight="200.0" prefWidth="200.0">
+                                 <children>
+                                    <ScrollPane fx:id="jScrollPane5" layoutX="493.0" layoutY="79.0" prefHeight="350.0" prefWidth="494.0">
+                                       <content>
+                                          <TableView fx:id="tbl_nv" onMouseClicked="#tbl_nvMouseClicked" prefHeight="346.0" prefWidth="497.0">
+                                            <columns>
+                                              <TableColumn fx:id="nv_c1" prefWidth="116.00005799531937" text="Title1" />
+                                              <TableColumn fx:id="nv_c2" prefWidth="112.79998779296875" text="Title2" />
+                                                <TableColumn fx:id="nv_c3" prefWidth="125.59992980957031" text="Title3" />
+                                                <TableColumn fx:id="nv_c4" prefWidth="125.60009765625" text="Title4" />
+                                            </columns>
+                                          </TableView>
+                                       </content>
+                                    </ScrollPane>
+                                    <Button fx:id="nv_btn_search" accessibleText="Tìm" layoutX="726.0" layoutY="27.0" mnemonicParsing="false" onAction="#nv_btn_searchActionPerformed" prefHeight="25.0" prefWidth="60.0" text="Search" />
+                                    <TextField fx:id="nv_search" layoutX="553.0" layoutY="27.0" />
+                                    <Label fx:id="jLabel49" accessibleText="Tên" layoutX="493.0" layoutY="28.0" prefHeight="23.0" prefWidth="53.0" text="Name" />
+                                    <Button fx:id="jButton13" accessibleText="Tìm" layoutX="848.0" layoutY="27.0" mnemonicParsing="false" onAction="#jButton13ActionPerformed" prefHeight="25.0" prefWidth="86.0" text="Refresh" />
+                                    <Pane fx:id="dg_panel1" accessibleText="dg_panel" prefHeight="430.0" prefWidth="484.0">
+                                       <children>
+                                          <Label fx:id="jLabel23" accessibleText="Mã nhân viên" layoutX="55.0" layoutY="14.0" prefHeight="23.0" prefWidth="76.0" text="ID Staff" />
+                                          <Label fx:id="jLabel24" accessibleText="Tên" layoutX="55.0" layoutY="45.0" prefHeight="23.0" prefWidth="76.0" text="Name" />
+                                          <Label fx:id="jLabel29" accessibleText="Giới tính" layoutX="55.0" layoutY="90.0" prefHeight="23.0" prefWidth="76.0" text="Sex" />
+                                          <Label fx:id="jLabel27" accessibleText="Tuổi" layoutX="55.0" layoutY="133.0" prefHeight="23.0" prefWidth="76.0" text="Age" />
+                                          <Label fx:id="jLabel28" accessibleText="CMND" layoutX="55.0" layoutY="178.0" prefHeight="23.0" prefWidth="76.0" text="ID Card" />
+                                          <Label fx:id="jLabel26" accessibleText="Địa chỉ" layoutX="55.0" layoutY="223.0" prefHeight="23.0" prefWidth="76.0" text="Address" />
+                                          <Label fx:id="jLabel25" accessibleText="SDT" layoutX="55.0" layoutY="268.0" prefHeight="23.0" prefWidth="76.0" text="Phone Number" />
+                                          <Label fx:id="jLabel47" accessibleText="Tên Đăng Nhập" layoutX="55.0" layoutY="312.0" prefHeight="23.0" prefWidth="76.0" text="Account" />
+                                          <TextField fx:id="nv_tf_tuoi" layoutX="144.0" layoutY="132.0" prefHeight="25.0" prefWidth="165.0" />
+                                          <TextField fx:id="nv_tf_cmnd" layoutX="143.0" layoutY="177.0" onAction="#dg_tf_cmndActionPerformed" prefHeight="25.0" prefWidth="166.0" />
+                                          <TextField fx:id="nv_tf_diachi" layoutX="144.0" layoutY="222.0" prefHeight="25.0" prefWidth="165.0" />
+                                          <TextField fx:id="nv_tf_sdt" layoutX="141.0" layoutY="267.0" prefHeight="25.0" prefWidth="168.0" />
+                                          <Button fx:id="nv_them_btn" accessibleText="Thêm" layoutX="115.0" layoutY="370.0" mnemonicParsing="false" onAction="#nv_them_btnActionPerformed" prefHeight="25.0" prefWidth="54.0" text="Add" />
+                                          <Button fx:id="nv_del_btn" accessibleText="Xóa" layoutX="199.0" layoutY="371.0" mnemonicParsing="false" onAction="#nv_del_btnActionPerformed" prefHeight="25.0" prefWidth="53.0" text="Delete" />
+                                          <Button fx:id="nv_upd_btn" accessibleText="Sửa" layoutX="279.0" layoutY="370.0" mnemonicParsing="false" onAction="#nv_upd_btnActionPerformed" prefHeight="25.0" prefWidth="56.0" text="Edit" />
+                                          <RadioButton fx:id="nv_nam" accessibleText="Nam" layoutX="157.0" layoutY="93.0" mnemonicParsing="false" onAction="#nv_namActionPerformed" text="Nam" textFill="#2105ef" />
+                                          <RadioButton fx:id="nv_nu" accessibleText="Nữ" layoutX="226.0" layoutY="93.0" mnemonicParsing="false" text="Nữ" textFill="#ed070a" />
+                                          <TextField fx:id="nv_tf_tennv" layoutX="142.0" layoutY="44.0" prefHeight="25.0" prefWidth="158.0" />
+                                          <Label fx:id="jLabel511" accessibleText="Giới tính" alignment="CENTER" layoutX="317.0" layoutY="43.0" prefHeight="16.0" prefWidth="19.0" text="*" textFill="#f70404">
+                                             <font>
+                                                <Font size="18.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="jLabel521" accessibleText="Giới tính" alignment="CENTER" layoutX="317.0" layoutY="88.0" prefHeight="16.0" prefWidth="19.0" text="*" textFill="#f70404">
+                                             <font>
+                                                <Font size="18.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="jLabel531" accessibleText="Giới tính" alignment="CENTER" layoutX="317.0" layoutY="176.0" prefHeight="16.0" prefWidth="19.0" text="*" textFill="#f70404">
+                                             <font>
+                                                <Font size="18.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="jLabel551" accessibleText="Giới tính" alignment="CENTER" layoutX="319.0" layoutY="266.0" prefHeight="16.0" prefWidth="19.0" text="*" textFill="#f70404">
+                                             <font>
+                                                <Font size="18.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="jLabel731" accessibleText="Giới tính" alignment="CENTER" layoutX="319.0" layoutY="310.0" prefHeight="16.0" prefWidth="19.0" text="*" textFill="#f70404">
+                                             <font>
+                                                <Font size="18.0" />
+                                             </font>
+                                          </Label>
+                                          <Button fx:id="nv_rs_btn" accessibleText="Reset" layoutX="114.0" layoutY="404.0" mnemonicParsing="false" onAction="#nv_rs_btnActionPerformed" prefHeight="25.0" prefWidth="56.0" text="Reset" />
+                                          <Button fx:id="nv_cancel_btn" accessibleText="Hủy" layoutX="197.0" layoutY="404.0" mnemonicParsing="false" onAction="#nv_cancel_btnActionPerformed" prefHeight="25.0" prefWidth="56.0" text="Cancel" />
+                                          <Label fx:id="dg_tf_madg1" layoutX="254.0" layoutY="3.0" prefHeight="9.0" prefWidth="76.0" />
+                                          <TextField fx:id="nv_tf_tdn" layoutX="143.0" layoutY="311.0" prefHeight="25.0" prefWidth="168.0" />
+                                          <Label fx:id="jLabel5311" accessibleText="Giới tính" alignment="CENTER" layoutX="319.0" layoutY="221.0" prefHeight="16.0" prefWidth="19.0" text="*" textFill="#f70404">
+                                             <font>
+                                                <Font size="18.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="jLabel42" accessibleText="Cấp bậc" layoutX="55.0" layoutY="342.0" prefHeight="23.0" prefWidth="76.0" text="Position" />
+                                          <ComboBox fx:id="nv_capbac" layoutX="144.0" layoutY="341.0" prefHeight="25.0" prefWidth="168.0" />
+                                          <Label fx:id="jLabel7311" accessibleText="Giới tính" alignment="CENTER" layoutX="319.0" layoutY="340.0" prefHeight="16.0" prefWidth="19.0" text="*" textFill="#f70404">
+                                             <font>
+                                                <Font size="18.0" />
+                                             </font>
+                                          </Label>
+                                          <Button fx:id="nv_reset_passwd" accessibleText="Reset Pass" layoutX="281.0" layoutY="404.0" mnemonicParsing="false" onAction="#nv_reset_passwdActionPerformed" prefHeight="25.0" prefWidth="76.0" text="Reset Pass" />
+                                       </children>
+                                    </Pane>
+                                 </children>
+                              </Pane>
+                           </content>
+                        </Tab>
+                        <Tab text="Information">
+                           <content>
+                              <Pane fx:id="jPanel8" prefHeight="200.0" prefWidth="200.0">
+                                 <children>
+                                    <Pane fx:id="jPanel7" prefHeight="445.0" prefWidth="986.0">
+                                       <children>
+                                          <Label fx:id="jLabel54" accessibleText="Mã nhân viên" layoutX="25.0" layoutY="21.0" prefHeight="23.0" prefWidth="146.0" text="ID Staff" />
+                                          <Label fx:id="jLabel56" accessibleText="Tên" layoutX="25.0" layoutY="53.0" prefHeight="23.0" prefWidth="146.0" text="Name" />
+                                          <Label fx:id="jLabel57" accessibleText="Tên đăng nhập" layoutX="25.0" layoutY="87.0" prefHeight="23.0" prefWidth="146.0" text="Account" />
+                                          <Label fx:id="jLabel58" accessibleText="SDT" layoutX="25.0" layoutY="125.0" prefHeight="23.0" prefWidth="146.0" text="Phone Number" />
+                                          <Label fx:id="jLabel59" accessibleText="Địa chỉ" layoutX="25.0" layoutY="161.0" prefHeight="23.0" prefWidth="146.0" text="Address" />
+                                          <Label fx:id="jLabel60" accessibleText="Tuổi" layoutX="25.0" layoutY="200.0" prefHeight="23.0" prefWidth="146.0" text="Age" />
+                                          <Label fx:id="jLabel61" accessibleText="CMND" layoutX="25.0" layoutY="245.0" prefHeight="23.0" prefWidth="146.0" text="IDCard" />
+                                          <Label fx:id="jLabel62" accessibleText="Giới tính" layoutX="25.0" layoutY="286.0" prefHeight="23.0" prefWidth="146.0" text="Sex" />
+                                          <Label fx:id="jLabel64" accessibleText="Quyền" layoutX="25.0" layoutY="329.0" prefHeight="23.0" prefWidth="146.0" text="Position" />
+                                          <Button fx:id="jButton9" accessibleText="Đổi mật khẩu" layoutX="23.0" layoutY="365.0" mnemonicParsing="false" onAction="#jButton9ActionPerformed" prefHeight="33.0" prefWidth="151.0" text="Change password" />
+                                          <Button fx:id="jButton10" accessibleText="Đăng xuất" layoutX="183.0" layoutY="365.0" mnemonicParsing="false" onAction="#jButton10ActionPerformed" prefHeight="33.0" prefWidth="151.0" text="Log out" />
+                                          <SplitPane dividerPositions="0.29797979797979796" layoutX="408.0" layoutY="7.0" prefHeight="434.0" prefWidth="33.0">
+                                            <items>
+                                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" />
+                                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" />
+                                            </items>
+                                          </SplitPane>
+                                          <Label fx:id="jLabel63" accessibleText="Phần mềm" layoutX="625.0" layoutY="10.0" prefHeight="23.0" prefWidth="146.0" text="Application" />
+                                          <Label fx:id="jLabel71" accessibleText="Hệ thống quản lý thư viện v0.7 Beta" layoutX="467.0" layoutY="42.0" prefHeight="23.0" prefWidth="381.0" text="Library Management System" />
+                                          <Label fx:id="tt_tf_ma" layoutX="218.0" layoutY="3.0" prefHeight="23.0" prefWidth="161.0" />
+                                          <Label fx:id="tt_tf_ten" layoutX="183.0" layoutY="54.0" prefHeight="23.0" prefWidth="120.0" />
+                                          <Label fx:id="tt_tf_tdn" layoutX="201.0" layoutY="87.0" prefHeight="23.0" prefWidth="161.0" />
+                                          <Label fx:id="tt_tf_sdt" layoutX="201.0" layoutY="125.0" prefHeight="23.0" prefWidth="161.0" />
+                                          <Label fx:id="tt_tf_diachi" layoutX="201.0" layoutY="211.0" prefHeight="23.0" prefWidth="161.0" />
+                                          <Label fx:id="tt_tf_tuoi" layoutX="211.0" layoutY="183.0" prefHeight="23.0" prefWidth="161.0" />
+                                          <Label fx:id="tt_tf_cmnd" layoutX="183.0" layoutY="245.0" prefHeight="23.0" prefWidth="161.0" />
+                                          <Label fx:id="tt_tf_gioitinh" layoutX="171.0" layoutY="286.0" prefHeight="23.0" prefWidth="161.0" />
+                                          <Label fx:id="tt_tf_capbac" layoutX="178.0" layoutY="329.0" prefHeight="23.0" prefWidth="161.0" />
+                                       </children>
+                                    </Pane>
+                                 </children>
+                              </Pane>
+                           </content>
+                        </Tab>
+                    </tabs>
+                  </TabPane>
+               </children>
+            </Pane>
+            <Label fx:id="jLabe40" accessibleText="Đăng xuất" layoutX="877.0" layoutY="10.0" onMouseClicked="#jLabe40MouseCicked" prefHeight="23.0" prefWidth="76.0" text="Log out" textAlignment="CENTER">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

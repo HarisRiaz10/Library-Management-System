@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+  <session-factory>
+   <property name="hibernate.connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+    <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/librarysystemm</property>
+    <property name="hibernate.connection.username">root</property>
+    <property name="hibernate.connection.password">HungSQL123@</property>
+    <property name="QQhibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+    <property name="hibernate.current_session_context_class">thread</property>
+    <property name="hibernate.show_sql">true</property>
+    <mapping class="com.libraryjavafx.NhanVien"/>
+    <mapping class="com.libraryjavafx.DocGia"/>
+    <mapping class="com.libraryjavafx.PhieuMuon"/>
+    <mapping class="com.libraryjavafx.ChiTietPhieuMuon"/>
+    <mapping class="com.libraryjavafx.Sach"/>
+    <mapping class="com.libraryjavafx.TheLoai"/>
+    <mapping class="com.libraryjavafx.NhaXuatBan"/>
+    <mapping class="com.libraryjavafx.chitietphieumuon_identity"/>
+  </session-factory>
+</hibernate-configuration>
